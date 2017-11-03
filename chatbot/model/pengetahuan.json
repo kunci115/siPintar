@@ -1,0 +1,43 @@
+{"pengetahuan": [
+        {"tag": "salam",
+         "patterns": ["Hi", "Bagaimana kabarmu?", "Ada orang disana?", "Halo", "bos"],
+         "responses": ["halo, terimakasih telah berkunjung", "sampai ketemu kembali", "ada yang bisa dibantu ?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "Sampai Ketemu nanti", "Sampai nanti", "dada"],
+         "responses": ["terimakaish telah berkunjung", "semoga harimu menyenangkan", "dah! dateng lagi ya"]
+        },
+        {"tag": "makasih",
+         "patterns": ["Makasih", "Terimakasih", "Sangat Membantu"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        },
+        {"tag": "jam",
+         "patterns": ["Jam Berapa Bukanya ya ?", "buka jam berapa ya?", "kapan bukanya ?" ],
+         "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem"]
+        },
+        {"tag": "mopeds",
+         "patterns": ["mopedsnya apa aja ya?", "Adanya mopeds tipe apa?", "Apa yang tersedia?" ],
+         "responses": ["Kami menyewakan yamaha, Piaggio dan Vespa mopeds", "Kami punya mopeds Piaggio, yamaha dan Vespa"]
+        },
+        {"tag": "pembayaran",
+         "patterns": ["Bisa bayar pake CC?", "Bisa bayar pake mastercard?", "cuma bisa bayar cash?" ],
+         "responses": ["Kami menerima VISA, Mastercard dan AMEX", "Kami menerima hampir seluruh creditcards"]
+        },
+        {"tag": "opentoday",
+         "patterns": ["Hari ini buka ga?", "hari ini buka jam berapa ya?", "Buka hari ini jam?"],
+         "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem setiap hari"]
+        },
+        {"tag": "Sewa",
+         "patterns": ["boleh sewa mopednya?", "saya ingin meminjam moped", "gimana cara pinjem moped?" ],
+         "responses": ["Kapan mau sewa mopednya ?"],
+         "context_set": "harisewa"
+        },
+        {"tag": "today",
+         "patterns": ["hari ini"],
+         "responses": ["untuk penyewaan hari ini hubungi 0856933346049", "oh baik untuk menyewa hubungi 085693346049"],
+         "context_filter": "harisewa"
+        }
+   ]
+}
+

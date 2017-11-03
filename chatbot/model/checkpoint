@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/kunci115/PycharmProjects/skripsi/siPintar/chatbot/model/model.tflearn"
+all_model_checkpoint_paths: "/home/kunci115/PycharmProjects/skripsi/siPintar/chatbot/model/model.tflearn"
