@@ -4,7 +4,7 @@
          "responses": ["halo, terimakasih telah berkunjung", "sampai ketemu kembali", "ada yang bisa dibantu ?"],
          "context_set": ""
         },
-        {"tag": "goodbye",
+        {"tag": "berpisah",
          "patterns": ["Bye", "Sampai Ketemu nanti", "Sampai nanti", "dada"],
          "responses": ["terimakaish telah berkunjung", "semoga harimu menyenangkan", "dah! dateng lagi ya"]
         },
@@ -16,15 +16,15 @@
          "patterns": ["Jam Berapa Bukanya ya ?", "buka jam berapa ya?", "kapan bukanya ?" ],
          "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem"]
         },
-        {"tag": "mopeds",
-         "patterns": ["mopedsnya apa aja ya?", "Adanya mopeds tipe apa?", "Apa yang tersedia?" ],
-         "responses": ["Kami menyewakan yamaha, Piaggio dan Vespa mopeds", "Kami punya mopeds Piaggio, yamaha dan Vespa"]
+        {"tag": "motor",
+         "patterns": ["motornya apa aja ya?", "Adanya motor tipe apa?", "Apa yang tersedia?" ],
+         "responses": ["Kami menyewakan yamaha, Piaggio dan Vespa ", "Kami punya motor Piaggio, yamaha dan Vespa"]
         },
         {"tag": "pembayaran",
-         "patterns": ["Bisa bayar pake CC?", "Bisa bayar pake mastercard?", "cuma bisa bayar cash?" ],
+         "patterns": ["Bisa bayar pake CC?", "Bisa bayar pake mastercard?", "cuma bisa bayar cash?","bisa bayar pakai tunai?" ],
          "responses": ["Kami menerima VISA, Mastercard dan AMEX", "Kami menerima hampir seluruh creditcards"]
         },
-        {"tag": "opentoday",
+        {"tag": "buka hari ini",
          "patterns": ["Hari ini buka ga?", "hari ini buka jam berapa ya?", "Buka hari ini jam?"],
          "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem setiap hari"]
         },

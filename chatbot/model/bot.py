@@ -88,7 +88,7 @@ net = tflearn.regression(net)
 # Define model and setup tensorboard
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 # Start training (apply gradient descent algorithm)
-model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
+model.fit(train_x, train_y, n_epoch=10000, batch_size=10, show_metric=True)
 model.save('model.tflearn')
 
 def clean_up_sentence(sentence):
@@ -114,7 +114,7 @@ def bow(sentence, words, show_details=False):
     return(np.array(bag))
 
 
-p = bow("is your shop open today?", words)
+p = bow("tokonya buka hari ini?", words)
 print (p)
 print (classes)
 

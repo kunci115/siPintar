@@ -50,9 +50,9 @@ def bow(sentence, words, show_details=False):
 
     return(np.array(bag))
 
-p = bow("is your shop open today?", words)
-#print (p)
-#print (classes)
+p = bow("hari ini buka ga?", words)
+print (p)
+print (classes)
 
 
 
@@ -78,23 +78,22 @@ def classify(sentence):
 
 def response(sentence, userID='123', show_details=False):
     results = classify(sentence)
-    # if we have a classification then find the matching intent tag
     if results:
-        # loop as long as there are matches to process
         while results:
             for i in pengetahuan['pengetahuan']:
-                # find a tag matching the first result
                 if i['tag'] == results[0][0]:
-                    # set context for this intent if necessary
                     if 'context_set' in i:
                         if show_details: print ('context:', i['context_set'])
                         context[userID] = i['context_set']
 
-                    # check if this intent is contextual and applies to this user's conversation
                     if not 'context_filter' in i or \
                         (userID in context and 'context_filter' in i and i['context_filter'] == context[userID]):
                         if show_details: print ('tag:', i['tag'])
-                        # a random response from the intent
                         return print(random.choice(i['responses']))
 
             results.pop(0)
+
+response("hari ini buka ga?")
+response("saya mau sewa")
+response("hari ini")
+response("baik makasih")
