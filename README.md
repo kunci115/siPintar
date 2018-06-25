@@ -7,8 +7,8 @@ Apps dibuat dengan 4 layer DNN
 3. python manage.py migrate
 
 #run apps#
-python manage.py createsuperuser
-python manage.py runserver
+1. python manage.py createsuperuser
+2. python manage.py runserver
 
 -->open browser<--
 1. 127.0.0.0:8000
