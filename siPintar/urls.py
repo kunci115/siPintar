@@ -15,11 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from chatbot.views import ChatterBotAppView
-
 urlpatterns = [
-    url(r'^$', ChatterBotAppView.as_view(), name='main'),
     url(r'^admin/', admin.site.urls),
-    url(r'^chatterbot/', include('chatterbot.ext.django_chatterbot.urls', namespace='chatterbot')),
-    url(r'^docs/', include('rest_framework_docs.urls')),
+    url(r'^bot/', include('chatbot.urls')),
+    url(r'', include('chatbot.urls')),
 ]

@@ -37,12 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chatterbot.ext.django_chatterbot',
-    'rest_framework',
-    'rest_framework_docs',
     'chatbot'
-]
 
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -133,15 +130,3 @@ STATICFILES_DIRS = (
     ),
 )
 
-CHATTERBOT = {
-    'name': 'Tech Support Bot',
-    'logic_adapters': [
-        'chatterbot.logic.MathematicalEvaluation',
-        'chatterbot.logic.TimeLogicAdapter',
-        'chatterbot.logic.BestMatch'
-    ],
-    'trainer': 'chatterbot.trainers.ChatterBotCorpusTrainer',
-    'training_data': [
-         'chatterbot.corpus.indonesia.greetings'
-    ]
-}

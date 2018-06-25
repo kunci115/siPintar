@@ -1,11 +1,11 @@
 {"pengetahuan": [
         {"tag": "salam",
-         "patterns": ["Hi", "Bagaimana kabarmu?", "Ada orang disana?", "Halo", "bos"],
-         "responses": ["halo, terimakasih telah berkunjung", "sampai ketemu kembali", "ada yang bisa dibantu ?"],
+         "patterns": ["Hi","halo","pagi", "sewa dong", "ada orang disana?", "halo", "bos","bang", "test","mau tanya dong"],
+         "responses": ["halo, ada apa?", "ada yang bisa dibantu ?"],
          "context_set": ""
         },
         {"tag": "berpisah",
-         "patterns": ["Bye", "Sampai Ketemu nanti", "Sampai nanti", "dada"],
+         "patterns": ["Bye", "Sampai Ketemu nanti", "Sampai nanti", "dada","makasih","thanks"],
          "responses": ["terimakaish telah berkunjung", "semoga harimu menyenangkan", "dah! dateng lagi ya"]
         },
         {"tag": "makasih",
@@ -13,15 +13,15 @@
          "responses": ["Happy to help!", "Any time!", "My pleasure"]
         },
         {"tag": "jam",
-         "patterns": ["Jam Berapa Bukanya ya ?", "buka jam berapa ya?", "kapan bukanya ?" ],
+         "patterns": ["Jam Berapa Bukanya ya ?", "buka jam berapa ya?", "kapan bukanya ?",  "kalo mau kesana gimana?","tokonya jam brp?","bisa dateng langsung?" ],
          "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem"]
         },
-        {"tag": "motor",
-         "patterns": ["motornya apa aja ya?", "Adanya motor tipe apa?", "Apa yang tersedia?" ],
-         "responses": ["Kami menyewakan yamaha, Piaggio dan Vespa ", "Kami punya motor Piaggio, yamaha dan Vespa"]
+        {"tag": "mobil",
+         "patterns": ["mobilnya apa aja ya?", "Adanya mobil tipe apa?", "Apa yang tersedia?","bisa sewa mobil ga?" ],
+         "responses": ["Tolong spesifik Kami hanya menyewakan jeep, inova dan avanza ", "Kami punya mobil jeep, inova dan avanza"]
         },
         {"tag": "pembayaran",
-         "patterns": ["Bisa bayar pake CC?", "Bisa bayar pake mastercard?", "cuma bisa bayar cash?","bisa bayar pakai tunai?" ],
+         "patterns": ["Bisa bayar pake CC?", "Bisa bayar pake mastercard?", "cuma bisa bayar cash?","bisa bayar pakai tunai?","bayarnya gimana?","pembayaran?","bayar","visa bisa?","mastercard bisa?" ],
          "responses": ["Kami menerima VISA, Mastercard dan AMEX", "Kami menerima hampir seluruh creditcards"]
         },
         {"tag": "buka hari ini",
@@ -29,8 +29,8 @@
          "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem setiap hari"]
         },
         {"tag": "Sewa",
-         "patterns": ["boleh sewa mopednya?", "saya ingin meminjam moped", "gimana cara pinjem moped?" ],
-         "responses": ["Kapan mau sewa mopednya ?"],
+         "patterns": ["boleh sewa mobil?", "saya ingin meminjam mobil", "gimana cara pinjem mobil?","mobil dong","jeep ada?","inova ada?","avanza ada?","sewa dong" ],
+         "responses": ["Kapan mau sewa mobilnya ?"],
          "context_set": "harisewa"
         },
         {"tag": "today",

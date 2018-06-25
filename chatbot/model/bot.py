@@ -1,9 +1,9 @@
 import nltk
 import pickle
+#steming indonesian corpus with sastrawi
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 factory = StemmerFactory()
 stemmer =factory.create_stemmer()
-# things we need for Tensorflow
 import numpy as np
 import tflearn
 import tensorflow as tf
@@ -18,12 +18,12 @@ words = []
 classes = []
 documents = []
 ignore_words = ['?']
-# loop through each sentence in our intents patterns
+
 for intent in intents['pengetahuan']:
     for pattern in intent['patterns']:
-        # tokenize each word in the sentence
+        # tokenize setiap kata didalam kalimat
         w = nltk.word_tokenize(pattern)
-        # add to our words list
+        # tambahkan kedalam list
         words.extend(w)
         # add to documents in our corpus
         documents.append((w, intent['tag']))
@@ -38,10 +38,10 @@ words = sorted(list(set(words)))
 # remove duplicates
 classes = sorted(list(set(classes)))
 
-print (len(documents), "documents")
-print (len(classes), "classes", classes)
-print (len(words), "unique stemmed words", words)
-
+# print (len(documents), "documents")
+# print (len(classes), "classes", classes)
+# print (len(words), "unique stemmed words", words)
+#
 
 
 # create our training data
@@ -80,15 +80,17 @@ train_y = list(training[:,1])
 tf.reset_default_graph()
 # Build neural network
 net = tflearn.input_data(shape=[None, len(train_x[0])])
-net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 16)
+net = tflearn.fully_connected(net, 16)
+net = tflearn.fully_connected(net, 16)
+net = tflearn.fully_connected(net, 16)
 net = tflearn.fully_connected(net, len(train_y[0]), activation='softmax')
 net = tflearn.regression(net)
 
 # Define model and setup tensorboard
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 # Start training (apply gradient descent algorithm)
-model.fit(train_x, train_y, n_epoch=10000, batch_size=10, show_metric=True)
+model.fit(train_x, train_y, n_epoch=5000, batch_size=10, show_metric=True)
 model.save('model.tflearn')
 
 def clean_up_sentence(sentence):
@@ -98,7 +100,7 @@ def clean_up_sentence(sentence):
     sentence_words = [stemmer.stem(word.lower()) for word in sentence_words]
     return sentence_words
 
-# return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
+# return bag of words(disingkat bow) array: 0 or 1 for each word in the bag that exists in the sentence
 def bow(sentence, words, show_details=False):
     # tokenize the pattern
     sentence_words = clean_up_sentence(sentence)
@@ -109,13 +111,9 @@ def bow(sentence, words, show_details=False):
             if w == s:
                 bag[i] = 1
                 if show_details:
-                    print ("found in bag: %s" % w)
+                    print ("test: %s" % w)
 
     return(np.array(bag))
 
-
-p = bow("tokonya buka hari ini?", words)
-print (p)
-print (classes)
 
 pickle.dump( {'words':words, 'classes':classes, 'train_x':train_x, 'train_y':train_y}, open( "training_data", "wb" ))
