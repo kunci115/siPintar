@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import User_Message
-from .models import Bot_Response
-from .models import Bot_Response_Model
+from .models import Text_Message
+from .models import Sipintar_Response
+from .models import Sipintar_Response_Model
 
-admin.site.register(User_Message)
-admin.site.register(Bot_Response)
-admin.site.register(Bot_Response_Model)
+admin.site.register(Text_Message)
+admin.site.register(Sipintar_Response)
+admin.site.register(Sipintar_Response_Model)
