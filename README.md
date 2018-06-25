@@ -11,5 +11,5 @@ python manage.py createsuperuser
 python manage.py runserver
 
 -->open browser<--
-127.0.0.0:8000
-127.0.0.0:8000/admin (for cms mode)
+1. 127.0.0.0:8000
+2. 127.0.0.0:8000/admin (for cms mode)
