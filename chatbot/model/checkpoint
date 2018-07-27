@@ -1,2 +1,2 @@
-model_checkpoint_path: "/home/kunci115/PycharmProjects/skripsi/siPintar/chatbot/model/model.tflearn"
-all_model_checkpoint_paths: "/home/kunci115/PycharmProjects/skripsi/siPintar/chatbot/model/model.tflearn"
+model_checkpoint_path: "/Users/rino/Documents/workspace/python-project/chatbot/model/model.tflearn"
+all_model_checkpoint_paths: "/Users/rino/Documents/workspace/python-project/chatbot/model/model.tflearn"

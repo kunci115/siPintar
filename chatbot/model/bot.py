@@ -38,10 +38,10 @@ words = sorted(list(set(words)))
 # remove duplicates
 classes = sorted(list(set(classes)))
 
-# print (len(documents), "documents")
-# print (len(classes), "classes", classes)
-# print (len(words), "unique stemmed words", words)
-#
+print (documents, "documents")
+print (classes, "classes")
+print ("unique stemmed words", words)
+
 
 
 # create our training data
