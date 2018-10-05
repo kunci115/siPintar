@@ -1,6 +1,6 @@
 absl-py==0.2.2
 astor==0.7.1
-Django==2.0.7
+Django==2.0.8
 gast==0.2.0
 grpcio==1.13.0
 h5py==2.8.0

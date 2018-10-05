@@ -1,5 +1,11 @@
 ### ChatbotDeepLearning Bahasa Indonesia ###
-Apps dibuat dengan 4 layer DNN
+
+#training dengan dataset sendiri
+Untung melatih chatbot dengan data anda sendiri dapat menambahkan di folder chatbot/model/pengetahuan.json
+
+1. setelah menambahkan data, waktunya training data dengan menjalankan file nn.py
+2. setelah itu mencoba menjalankan bot dengan command python bot.py
+
 
 ###Way to Contribute###
 1. pip install -r requirements.txt
