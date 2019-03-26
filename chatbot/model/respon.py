@@ -5,17 +5,19 @@ import numpy as np
 import tflearn
 import random
 import pickle
-import nltk
 import json
+import nltk
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-sys.path.append('/Users/rino/Documents/workspace/python-project/')
-os.environ.setdefault("DJANGO_SETTINGS_MODULE","siPintar.settings")
-os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+
+sys.path.append('/Users/detikcom/Documents/skripsi/')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "siPintar.settings")
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
 training_file = os.path.join(settings.BASE_DIR, 'chatbot/model/'+'training_data')
 data = pickle.load(open(training_file, "rb"))
+
 words = data['words']
 classes = data['classes']
 train_x = data['train_x']
@@ -29,10 +31,10 @@ with open(pengetahuan) as json_data:
 
 # deepneuralnet
 net = tflearn.input_data(shape=[None, len(train_x[0])])
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
+net = tflearn.fully_connected(net, 9)
+net = tflearn.fully_connected(net, 18)
+net = tflearn.fully_connected(net, 18)
+net = tflearn.fully_connected(net, 9)
 net = tflearn.fully_connected(net, len(train_y[0]), activation='softmax')
 net = tflearn.regression(net)
 
@@ -54,8 +56,8 @@ def bow(sentence, words, show_details=False):
             if w == s:
                 bag[i] = 1
                 if show_details:
-                    print ("test : %s" % w)
-    return(np.array(bag))
+                    print("test : %s" % w)
+    return np.array(bag)
 
 
 # load model yang disimpan
@@ -78,7 +80,7 @@ def classify(sentence):
     return return_list
 
 
-def response(sentence, userID='kunci115', show_details=False):
+def response(sentence, userid='kunci115', show_details=False):
     results = classify(sentence)
 
     if results:
@@ -88,10 +90,10 @@ def response(sentence, userID='kunci115', show_details=False):
                     if 'context_set' in i:
                         if show_details:
                             print('context:', i['context_set'])
-                        context[userID] = i['context_set']
+                        context[userid] = i['context_set']
 
                     if not 'context_filter' in i or \
-                        (userID in context and 'context_filter' in i and i['context_filter'] == context[userID]):
+                        (userid in context and 'context_filter' in i and i['context_filter'] == context[userid]):
                         if show_details:
                             print('tag:', i['tag'])
                         return random.choice(i['responses'])

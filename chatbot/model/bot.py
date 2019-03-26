@@ -1,15 +1,16 @@
 import nltk
 import pickle
-#steming indonesian corpus with sastrawi
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-factory = StemmerFactory()
-stemmer =factory.create_stemmer()
 import numpy as np
 import tflearn
 import tensorflow as tf
 import random
-
 import json
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+
+factory = StemmerFactory()
+stemmer = factory.create_stemmer()
+
+
 with open('pengetahuan.json') as json_data:
     intents = json.load(json_data)
 
@@ -38,10 +39,9 @@ words = sorted(list(set(words)))
 # remove duplicates
 classes = sorted(list(set(classes)))
 
-print (documents, "documents")
-print (classes, "classes")
-print ("unique stemmed words", words)
-
+print(documents, "documents")
+print(classes, "classes")
+print("unique stemmed words", words)
 
 
 # create our training data
@@ -73,17 +73,18 @@ random.shuffle(training)
 training = np.array(training)
 
 # create train and test lists
-train_x = list(training[:,0])
-train_y = list(training[:,1])
+train_x = list(training[:, 0])
+train_y = list(training[:, 1])
 
 # reset underlying graph data
 tf.reset_default_graph()
 # Build neural network
-net = tflearn.input_data(shape=[None, len(train_x[0])])
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
-net = tflearn.fully_connected(net, 16)
+net = tflearn.input_data(shape=(None, len(train_x[0])))
+net = tflearn.fully_connected(net, 9)
+net = tflearn.fully_connected(net, 18)
+net = tflearn.fully_connected(net, 18)
+net = tflearn.fully_connected(net, 9)
+
 net = tflearn.fully_connected(net, len(train_y[0]), activation='softmax')
 net = tflearn.regression(net)
 
@@ -93,12 +94,14 @@ model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 model.fit(train_x, train_y, n_epoch=5000, batch_size=10, show_metric=True)
 model.save('model.tflearn')
 
+
 def clean_up_sentence(sentence):
     # tokenize the pattern
     sentence_words = nltk.word_tokenize(sentence)
     # stem each word
     sentence_words = [stemmer.stem(word.lower()) for word in sentence_words]
     return sentence_words
+
 
 # return bag of words(disingkat bow) array: 0 or 1 for each word in the bag that exists in the sentence
 def bow(sentence, words, show_details=False):
@@ -107,13 +110,13 @@ def bow(sentence, words, show_details=False):
     # bag of words
     bag = [0]*len(words)
     for s in sentence_words:
-        for i,w in enumerate(words):
+        for i, w in enumerate(words):
             if w == s:
                 bag[i] = 1
                 if show_details:
-                    print ("test: %s" % w)
+                    print("test: %s" % w)
 
-    return(np.array(bag))
+    return np.array(bag)
 
 
-pickle.dump( {'words':words, 'classes':classes, 'train_x':train_x, 'train_y':train_y}, open( "training_data", "wb" ))
+pickle.dump({'words': words, 'classes': classes, 'train_x': train_x, 'train_y': train_y}, open("training_data", "wb"))
