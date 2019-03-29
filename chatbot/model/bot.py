@@ -79,17 +79,17 @@ train_y = list(training[:, 1])
 # reset underlying graph data
 tf.reset_default_graph()
 # Build neural network
-net = tflearn.input_data(shape=(None, len(train_x[0])))
-net = tflearn.fully_connected(net, 9)
-net = tflearn.fully_connected(net, 18)
-net = tflearn.fully_connected(net, 18)
-net = tflearn.fully_connected(net, 9)
+input_h = tflearn.input_data(shape=(None, len(train_x[0])))
+h2 = tflearn.fully_connected(input_h, 9)
+h3 = tflearn.fully_connected(h2, 18)
+h4 = tflearn.fully_connected(h3, 18)
+h5 = tflearn.fully_connected(h4, 9)
 
-net = tflearn.fully_connected(net, len(train_y[0]), activation='softmax')
-net = tflearn.regression(net)
+output_h = tflearn.fully_connected(h5, len(train_y[0]), activation='softmax')
+output_h_reg = tflearn.regression(output_h)
 
 # Define model and setup tensorboard
-model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
+model = tflearn.DNN(output_h_reg, tensorboard_dir='tflearn_logs')
 # Start training (apply gradient descent algorithm)
 model.fit(train_x, train_y, n_epoch=5000, batch_size=10, show_metric=True)
 model.save('model.tflearn')

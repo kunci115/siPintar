@@ -29,17 +29,17 @@ with open(pengetahuan) as json_data:
     pengetahuan = json.load(json_data)
 
 
-# deepneuralnet
-net = tflearn.input_data(shape=[None, len(train_x[0])])
-net = tflearn.fully_connected(net, 9)
-net = tflearn.fully_connected(net, 18)
-net = tflearn.fully_connected(net, 18)
-net = tflearn.fully_connected(net, 9)
-net = tflearn.fully_connected(net, len(train_y[0]), activation='softmax')
-net = tflearn.regression(net)
+# load deepneuralnet
+input_h = tflearn.input_data(shape=(None, len(train_x[0])))
+h2 = tflearn.fully_connected(input_h, 9)
+h3 = tflearn.fully_connected(h2, 18)
+h4 = tflearn.fully_connected(h3, 18)
+h5 = tflearn.fully_connected(h4, 9)
 
+output_h = tflearn.fully_connected(h5, len(train_y[0]), activation='softmax')
+output_h_reg = tflearn.regression(output_h)
 # Define model dan setup tensorboard
-model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
+model = tflearn.DNN(output_h_reg, tensorboard_dir='tflearn_logs')
 
 
 def clean_up_sentence(sentence):
@@ -91,11 +91,18 @@ def response(sentence, userid='kunci115', show_details=False):
                         if show_details:
                             print('context:', i['context_set'])
                         context[userid] = i['context_set']
+                        output_var = [random.choice(i['responses']), i['tag'], context[userid]]
+                        return output_var
 
                     if not 'context_filter' in i or \
                         (userid in context and 'context_filter' in i and i['context_filter'] == context[userid]):
                         if show_details:
                             print('tag:', i['tag'])
-                        return random.choice(i['responses'])
+                        context_filter = i.get('context_filter', '')
+                        output_var = [random.choice(i['responses']), i['tag'], context_filter]
+                        return output_var
 
             results.pop(0)
+
+response('boleh sewa mobil?')
+
