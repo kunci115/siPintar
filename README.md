@@ -1,7 +1,7 @@
 ### ChatbotDeepLearning Bahasa Indonesia ###
 
 #training dengan dataset sendiri
-Untung melatih chatbot dengan data anda sendiri dapat menambahkan di folder chatbot/model/pengetahuan.json
+Untuk melatih chatbot dengan data anda sendiri dapat menambahkan di folder chatbot/model/pengetahuan.json
 
 1. setelah menambahkan data, waktunya training data dengan menjalankan file bot.py
 2. setelah itu mencoba menjalankan bot dengan command python respon.py
