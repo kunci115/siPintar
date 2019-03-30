@@ -7,8 +7,8 @@ for your business need.
 Built with multi layer perceptron and you can customize with your own datasets.
 
 #### Screenshot
-![Screenshot software](http://url/screenshot-software.png "screenshot software")
-![alt text](http://url/to/img.png)
+![Screenshot software](https://github.com/kunci115/siPintar/blob/master/ss1.png"screenshot software")
+![alt text](https://github.com/kunci115/siPintar/blob/master/ss2.png)
 ## Usage
 ```
 If you want to train with your own datasets, checkout pengetahuan.json file
