@@ -1,21 +1,51 @@
 ### ChatbotDeepLearning Bahasa Indonesia ###
 
-#training dengan dataset sendiri
-Untuk melatih chatbot dengan data anda sendiri dapat menambahkan di folder chatbot/model/pengetahuan.json
+si Pintar, Indonesian Chatbot Deep Neural Network
+======
+**siPintar** is an indonesian chatbot built with software for your business need. 
+Built with multi layer perceptron and customize with your own datasets.
 
-1. setelah menambahkan data, waktunya training data dengan menjalankan file bot.py
-2. setelah itu mencoba menjalankan bot dengan command python respon.py
+## Usage
+```
+If you want to train with your own datasets, checkout pengetahuan.json file
+after that you have to run bot.py to train your own models and you are using
+respon.py to classify and make a response chat with it.
+
+Go to chatbot -> model -> pengetahuan.json(to suit with your own data)
+
+$ python bot.py
+$ python respon.py
+...
+```
+## Contributors
+
+### Contributors on GitHub
+* [Rino Alfian](https://github.com/kunci115)
 
 
-###Way to Contribute###
-1. pip install -r requirements.txt
-2. python manage.py makemigrations
-3. python manage.py migrate
+### Third party libraries
+* see [Tensorflow](https://github.com/tensorflow/tensorflow) 
+* see [tflearn](https://github.com/tflearn/tflearn)
+* see [tflearn](https://github.com/har07/PySastrawi)
+* see [nltk](https://github.com/nltk/nltk)
+* see [django](https://github.com/django/django)
 
-#run apps#
-1. python manage.py createsuperuser
-2. python manage.py runserver
 
--->open browser<--
-1. 127.0.0.0:8000
-2. 127.0.0.0:8000/admin (for cms mode)
+## How-to use this code
+```
+$ git clone https://github.com/kunci115/siPintar.git
+$ pip install -r requirements.txt
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
+...
+```
+## Contact
+#### Developer
+* e-mail: rino.alpin@gmail.com
+* Twitter: [@rinoalf](https://twitter.com/rinoalf "rinoalf")
+
+# Expectation
+<h4> I was expect that if you are using this, please share the data so we can work together<h4>
+
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=username&url=https://github.com/username/sw-name&title=sw-name&language=&tags=github&category=software) 
