@@ -2,9 +2,13 @@
 
 si Pintar, Indonesian Chatbot Deep Neural Network
 ======
-**siPintar** is an indonesian chatbot built with software for your business need. 
-Built with multi layer perceptron and customize with your own datasets.
+**siPintar** is an indonesian chatbot built with NLP technique combine with MLP algorithm
+for your business need. 
+Built with multi layer perceptron and you can customize with your own datasets.
 
+#### Screenshot
+![Screenshot software](http://url/screenshot-software.png "screenshot software")
+![alt text](http://url/to/img.png)
 ## Usage
 ```
 If you want to train with your own datasets, checkout pengetahuan.json file
@@ -26,7 +30,7 @@ $ python respon.py
 ### Third party libraries
 * see [Tensorflow](https://github.com/tensorflow/tensorflow) 
 * see [tflearn](https://github.com/tflearn/tflearn)
-* see [tflearn](https://github.com/har07/PySastrawi)
+* see [Pysastrawi](https://github.com/har07/PySastrawi)
 * see [nltk](https://github.com/nltk/nltk)
 * see [django](https://github.com/django/django)
 

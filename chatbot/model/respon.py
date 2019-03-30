@@ -104,3 +104,8 @@ def response(sentence, userid='kunci115', show_details=False):
 
             results.pop(0)
 
+
+print(classify('boleh sewa mobil?'))
+
+print(response('boleh sewa mobil?'))
+
