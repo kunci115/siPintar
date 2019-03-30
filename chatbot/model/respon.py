@@ -104,5 +104,3 @@ def response(sentence, userid='kunci115', show_details=False):
 
             results.pop(0)
 
-response('boleh sewa mobil?')
-

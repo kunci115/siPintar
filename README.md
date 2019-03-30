@@ -1,4 +1,4 @@
-### ChatbotDeepLearning Bahasa Indonesia ###
+### Chatbot Deep Neural Network for Bahasa Indonesia ###
 
 si Pintar, Indonesian Chatbot Deep Neural Network
 ======
@@ -48,4 +48,4 @@ $ python manage.py runserver
 # Expectation
 <h4> I was expect that if you are using this, please share the data so we can work together<h4>
 
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=username&url=https://github.com/username/sw-name&title=sw-name&language=&tags=github&category=software) 
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=rinoalfian&url=https://github.com/kunci115/siPintar&title=siPintar&language=&tags=github&category=software) 
