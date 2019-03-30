@@ -7,7 +7,7 @@ for your business need.
 Built with multi layer perceptron and you can customize with your own datasets.
 
 #### Screenshot
-![Screenshot software](https://github.com/kunci115/siPintar/blob/master/ss1.png"screenshot software")
+![Screenshot software](https://github.com/kunci115/siPintar/blob/master/ss1.png)
 ![alt text](https://github.com/kunci115/siPintar/blob/master/ss2.png)
 ## Usage
 ```
