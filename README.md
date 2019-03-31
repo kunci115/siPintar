@@ -19,6 +19,14 @@ Go to chatbot -> model -> pengetahuan.json(to suit with your own data)
 
 $ python bot.py
 $ python respon.py
+
+if error while you run the respon.py:
+    please edit this code based on your environment
+    in respon.py
+        sys.path.append('/Users/detikcom/Documents/skripsi/')
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "siPintar.settings")
+        os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 ...
 ```
 ## Contributors
