@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+
+<head>
+	<meta charset="UTF-8">
+	<title>siPintar chatbot</title>
+</head>
+
+<body>
+<div class="chat-output" id="chat-output">
+  <div class="bot-message">
+    	<div class="message">bot : {{ bot_message }}</div>
+  </div>
+  <div class="user-message" style="display:{{display}}">
+    	<div class="message">you : {{ user_message}}</div>
+  </div>
+</div>
+
+<div class="chat-input">
+  <form action="submit" id="user-input-form" method="post">{% csrf_token %}
+    <input type="text" id="user-input" class="user-input" placeholder="chat disini" name="user_message" >
+  </form>
+</div>
+</body>
+
+</html>
+
