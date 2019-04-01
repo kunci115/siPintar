@@ -1,14 +1,14 @@
 ### Chatbot Deep Neural Network for Bahasa Indonesia ###
 
-si Pintar, Indonesian Chatbot Deep Neural Network
+Cerdas, Indonesian Chatbot Deep Neural Network
 ======
-**siPintar** is an indonesian chatbot built with NLP technique combine with MLP algorithm
+**cerdas** is an indonesian chatbot built with NLP technique combine with MLP algorithm
 for your business need. 
 Built with multi layer perceptron and you can customize with your own datasets.
 
 #### Screenshot
-![Screenshot software](https://github.com/kunci115/siPintar/blob/master/ss1.png)
-![alt text](https://github.com/kunci115/siPintar/blob/master/ss2.png)
+![Screenshot software](https://github.com/kunci115/cerdas/blob/master/ss1.png)
+![alt text](https://github.com/kunci115/cerdas/blob/master/ss2.png)
 ## Usage
 ```
 If you want to train with your own datasets, checkout pengetahuan.json file
