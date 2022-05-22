@@ -52,10 +52,6 @@ $ python manage.py migrate
 $ python manage.py runserver
 ...
 ```
-## Contact
-#### Developer
-* e-mail: rino.alpin@gmail.com
-* Twitter: [@rinoalf](https://twitter.com/rinoalf "rinoalf")
 
 # Expectation
 <h4> I was expect that if you are using this, please share the data so we can work together<h4>
